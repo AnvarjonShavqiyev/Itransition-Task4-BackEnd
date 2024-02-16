@@ -7,6 +7,13 @@ const cors = require("cors");
 mongoose.connect(
   "mongodb+srv://anvarjonshavqiyev68:QTYfAmo4XWg7MbWv@cluster1.hc6wtxf.mongodb.net/?retryWrites=true&w=majority"
 );
+const corsOptions = {
+  origin: '*', 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+app.use(cors(corsOptions)); 
 
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
