@@ -13,12 +13,12 @@ const corsOptions = {
   credentials: true,
   optionsSuccessStatus: 204,
 };
-app.use(cors(corsOptions)); 
 
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(corsOptions)); 
+
 const userRoutes = require("./api/routes/user");
 
 app.use((req, res, next) => {
